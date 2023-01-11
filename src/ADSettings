@@ -1,0 +1,8 @@
+{
+	"authority": "https://login.microsoftonline.com/3b94b4c6-59a7-4d4f-b594-532eadaff784",
+	"clientId": "c077597d-aa24-46a7-aaec-58cad7ac4b46",
+	"clientSecret": "Jkk8Q~E42BFq1em5A1IQREwE.RQjtOW5i63T_bR0",
+	"apiScopes": "api://c077597d-aa24-46a7-aaec-58cad7ac4b46/User.All",
+	"username": "414295@student.fontys.nl",
+	"password": "Hls5b=QNkN" 
+}
