@@ -1,1 +1,70 @@
+name: Github Pages Deploy
 
+on:
+  push:
+    branches:
+      - "main"
+
+env:
+  REGISTRY: ghcr.io
+  FRONTEND_TAG_PUSH: ghcr.io/bramwetering/teamyapp-frontend:${{ github.sha }}      
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Install and build
+        run: npm install && npm run build
+        # env:
+        #   REACT_APP_KWETTER_TENANT_ID: ${{ secrets.REACT_APP_KWETTER_TENANT_ID }}
+        #   REACT_APP_KWETTER_FRONTEND_ID: ${{ secrets.REACT_APP_KWETTER_FRONTEND_ID }}
+        #   REACT_APP_USER_API: ${{ secrets.REACT_APP_USER_API }}
+        #   REACT_APP_API_URL: ${{ secrets.REACT_APP_API_URL }}
+        #   REACT_APP_MESSAGE_API: ${{ secrets.REACT_APP_MESSAGE_API }}
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      # - name: Login to GitHub Container Registry
+      #   uses: docker/login-action@v1
+      #   with:
+      #     registry: ${{ env.REGISTRY }}
+      #     username: ${{ github.actor }}
+      #     password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Login to Dockerhub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      # - name: Make envfile
+      #   uses: SpicyPizza/create-envfile@v1.3
+      #   with:
+      #     REACT_APP_KWETTER_TENANT_ID: ${{ secrets.REACT_APP_KWETTER_TENANT_ID }}
+      #     REACT_APP_KWETTER_FRONTEND_ID: ${{ secrets.REACT_APP_KWETTER_FRONTEND_ID }}
+      #     REACT_APP_USER_API: ${{ secrets.REACT_APP_USER_API }}
+      #     REACT_APP_API_URL: ${{ secrets.REACT_APP_API_URL }}
+      #     REACT_APP_MESSAGE_API: ${{ secrets.REACT_APP_MESSAGE_API }}
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.1.4
+        with:
+          branch: gh-pages # The branch the action should deploy to.
+          folder: build # The folder the action should deploy.  ''
+
+      - name: Build & push  
+        uses: docker/build-push-action@v2
+        with:
+          push: true
+          tags: FRONTENDPUSH      
