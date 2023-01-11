@@ -22,7 +22,7 @@ jobs:
         uses: actions/checkout@v1
 
       - name: Install and build
-        run: npm install && npm run build
+        run: npm install --force && npm run build
         # env:
         #   REACT_APP_KWETTER_TENANT_ID: ${{ secrets.REACT_APP_KWETTER_TENANT_ID }}
         #   REACT_APP_KWETTER_FRONTEND_ID: ${{ secrets.REACT_APP_KWETTER_FRONTEND_ID }}
