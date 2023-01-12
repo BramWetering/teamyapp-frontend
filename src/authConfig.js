@@ -9,7 +9,7 @@ export const msalConfig = {
     auth: {
         clientId: "c077597d-aa24-46a7-aaec-58cad7ac4b46", // This is the ONLY mandatory field that you need to supply.
         authority: "https://login.microsoftonline.com/3b94b4c6-59a7-4d4f-b594-532eadaff784", // Defaults to "https://login.microsoftonline.com/common"
-        redirectUri: process.env.NODE_ENV === 'production' ? "https://vitaapp-frontend.web.app/" : "http://localhost:3000", // You must register this URI on Azure Portal/App Registration. Defaults to window.location.origin
+        redirectUri: process.env.NODE_ENV === 'production' ? "https://bramwetering.github.io/teamyapp-frontend/" : "http://localhost:3000", // You must register this URI on Azure Portal/App Registration. Defaults to window.location.origin
         //postLogoutRedirectUri: process.env.NODE_ENV === 'production' ? "https://vitaapp-frontend.web.app/" : "http://localhost:3000", // Indicates the page to navigate after logout.
         navigateToLoginRequestUrl: false, // If "true", will navigate back to the original request location before processing the auth code response.
     },
