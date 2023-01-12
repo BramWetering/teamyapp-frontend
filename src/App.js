@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter, Route, Routes, Navigate, Outlet } from 'react-router-dom';
-import Signin from './components/Login/Sigin';
+import { BrowserRouter, Route, Routes} from 'react-router-dom';
+// import Signin from './components/Login/Sigin';
 import { useIsAuthenticated } from "@azure/msal-react";
 import { PageLogin } from "./components/Login/Login";
 
@@ -20,7 +20,7 @@ function App() {
     return children;
   };
 
-  const token = localStorage.getItem('accessToken');
+  //const token = localStorage.getItem('accessToken');
 
   // if(!token) {
   //   return <Signin />
