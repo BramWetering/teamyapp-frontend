@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { MockData_Userdescriptions, MockData_Generaldescriptions } from "../../MockData/Messages";
+//import { MockData_Userdescriptions, MockData_Generaldescriptions } from "../../MockData/Messages";
 //import { MockData_Trends } from "../../MockData/Trends";
-import { MockData_User } from "../../MockData/Users";
+//import { MockData_User } from "../../MockData/Users";
 //import { timeAgo } from "../../Services/Time";
-import MessageData from "../Data/MessageData";
+//import MessageData from "../Data/MessageData";
 import "./Home.css"
 import { GetAllMessages, PostMessage } from "../../services/message_service";
 import { loginRequest } from "../../authConfig";
@@ -14,11 +14,11 @@ import { useMsal } from "@azure/msal-react";
 export default function Home() {
  
     const { instance, accounts } = useMsal();
-    const [kweets, setKweets] = useState(MockData_Userdescriptions)
+    //const [kweets, setKweets] = useState(MockData_Userdescriptions)
     //const [trends] = useState(MockData_Trends)
-    const [user] = useState(MockData_User)
-    const [ownKweets] = useState(MockData_Generaldescriptions)
-    const lastKweet = ownKweets.sort((a, b) => (a.timestamp < b.timestamp) ? 1 : -1)[0]
+    //const [user] = useState(MockData_User)
+    //const [ownKweets] = useState(MockData_Generaldescriptions)
+    //const lastKweet = ownKweets.sort((a, b) => (a.timestamp < b.timestamp) ? 1 : -1)[0]
     const [messageText, setHappeningTest] = useState("")
     const [messageTitle, setMessageTitle] = useState("")
     const [messageData, setMessageData] =  useState([])
@@ -34,8 +34,8 @@ export default function Home() {
             var accessToken = await getAccessToken();
             console.log(accessToken);
             await PostMessage(accessToken, messageText,messageTitle)
-            var newMessageList = await GetAllMessages(accessToken)
-            setKweets(newMessageList.reverse())
+            //var newMessageList = await GetAllMessages(accessToken)
+            //setKweets(newMessageList.reverse())
             document.getElementById('happening').value = ""
             document.getElementById('title').value = ""
         }

@@ -7,7 +7,7 @@ import reportWebVitals from './reportWebVitals';
 import { PublicClientApplication } from "@azure/msal-browser";
 import { MsalProvider, MsalContext } from "@azure/msal-react";
 import { msalConfig } from "./authConfig";
-import { getUser, checkUser } from "./services/user_service";
+import { checkUser } from "./services/user_service";
 
 //const root = ReactDOM.createRoot(document.getElementById('root'));
 

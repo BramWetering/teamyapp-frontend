@@ -1,5 +1,5 @@
 import axios from "axios";
-import { protectedResources } from "../authConfig";
+//import { protectedResources } from "../authConfig";
 
 const url = "http://159.223.240.117/";
 
