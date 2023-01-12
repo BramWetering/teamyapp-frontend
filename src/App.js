@@ -31,7 +31,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/teamyapp/home' element={
+        <Route path='/teamyapp-frontend/home' element={
           <ProtectedRoute>
             <Layout>
               <Home />
@@ -39,7 +39,7 @@ function App() {
           </ProtectedRoute>
         }
         />
-        <Route path='/teamyapp/profile' element={
+        <Route path='/teamyapp-frontend/profile' element={
           <ProtectedRoute>
             <Layout>
               <Profile />
