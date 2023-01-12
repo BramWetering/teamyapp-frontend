@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/teamyapp-frontend/static/css/main.eadca941.css",
-    "main.js": "/teamyapp-frontend/static/js/main.97541e9a.js",
+    "main.js": "/teamyapp-frontend/static/js/main.f2b983d5.js",
     "static/js/787.28cb0dcd.chunk.js": "/teamyapp-frontend/static/js/787.28cb0dcd.chunk.js",
     "index.html": "/teamyapp-frontend/index.html",
     "main.eadca941.css.map": "/teamyapp-frontend/static/css/main.eadca941.css.map",
-    "main.97541e9a.js.map": "/teamyapp-frontend/static/js/main.97541e9a.js.map",
+    "main.f2b983d5.js.map": "/teamyapp-frontend/static/js/main.f2b983d5.js.map",
     "787.28cb0dcd.chunk.js.map": "/teamyapp-frontend/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.eadca941.css",
-    "static/js/main.97541e9a.js"
+    "static/js/main.f2b983d5.js"
   ]
 }
