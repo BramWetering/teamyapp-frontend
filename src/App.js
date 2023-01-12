@@ -9,6 +9,7 @@ import Home from "./components/Home/Home";
 import Layout from './components/Layout/Layout';
 import Profile from './components/Login/Profile';
 import NotFound from './components/NotFound/NotFound';
+import Test from "./components/Test/Test";
 
 function App() {
   const ProtectedRoute = ({ children }) => {
@@ -45,6 +46,14 @@ function App() {
               <Profile />
             </Layout>
           </ProtectedRoute>
+        }
+        />
+        <Route path='/teamyapp-frontend/Test' element={
+
+            <Layout>
+              <Test />
+            </Layout>
+
         }
         />
         <Route path="*" element={
